@@ -2,17 +2,18 @@
 #include <cctype>
 #include <cstdlib>
 
+// Function to test if a character is a digit
 void intTest()
 {
     while (true)
     {
         char ch{};
-        char cnt{};
-        std::cout << "Wpisz znak: ";
+        char cont{};
+        std::cout << "Enter a character: ";
         std::cin >> ch;
         bool isDigit = std::isdigit(ch);
-        std::cout << "Czy '" << ch << "' jest cyfrą? " << (isDigit ? "Tak" : "Nie") << std::endl;
-        std::cout << "Kontynuować?: ";
+        std::cout << "Is '" << ch << "' a digit? " << (isDigit ? "Yes" : "No") << std::endl;
+        std::cout << "Continue?: ";
         std::cin >> ch;
 
         if (ch == 't')
@@ -24,55 +25,55 @@ void intTest()
             break;
         }
     }
-    
 }
 
-int kalkulator()
+// Calculator function
+int calculator()
 {
-    std::cout << "Wypasiony KALKULATOR\u00AE \n \n";
+    std::cout << "Awesome CALCULATOR\u00AE \n \n";
     while (true)
     {
-        int a{}, b{}; // Zmiana na int
-        char c{};
-        int wynik{};
-        char kontynuacja{};
+        int firstNumber{}, secondNumber{}; // Changed to int
+        char operation{};
+        int result{};
+        char continueCalc{};
 
-        std::cout << "Wpisz pierwszą liczbę: ";
-        std::cin >> a;
-        std::cout << "Wpisz drugą liczbę: ";
-        std::cin >> b;
+        std::cout << "Enter the first number: ";
+        std::cin >> firstNumber;
+        std::cout << "Enter the second number: ";
+        std::cin >> secondNumber;
 
-        std::cout << "Jakie działanie wykonać? (+, -, *, /): ";
-        std::cin >> c;
+        std::cout << "Which operation to perform? (+, -, *, /): ";
+        std::cin >> operation;
 
-        if (c == '+')
-            wynik = a + b;
-        else if (c == '-')
-            wynik = a - b;
-        else if (c == '*')
-            wynik = a * b;
-        else if (c == '/')
+        if (operation == '+')
+            result = firstNumber + secondNumber;
+        else if (operation == '-')
+            result = firstNumber - secondNumber;
+        else if (operation == '*')
+            result = firstNumber * secondNumber;
+        else if (operation == '/')
         {
-            if (b == 0)
+            if (secondNumber == 0)
             {
-                std::cout << "Nie dziel przez zero!\n";
+                std::cout << "Do not divide by zero!\n";
                 continue;
             }
-            wynik = a / b;
+            result = firstNumber / secondNumber;
         }
         else
         {
-            std::cout << "Nieznane działanie!\n";
+            std::cout << "Unknown operation!\n";
             continue;
         }
 
-        std::cout << "Wynik: " << wynik << "\n\n";
-        std::cout << "Chcesz kontynuować?: (T/N) ";
-        std::cin >> kontynuacja;
+        std::cout << "Result: " << result << "\n\n";
+        std::cout << "Do you want to continue? (Y/N) ";
+        std::cin >> continueCalc;
 
-        if (kontynuacja == 'N' || kontynuacja == 'n')
+        if (continueCalc == 'N' || continueCalc == 'n')
         {
-            std::cout << "NAURA\n\n";
+            std::cout << "GOODBYE\n\n";
             break;
         }
         std::cout << "\033[2J\033[1;1H";
@@ -80,10 +81,8 @@ int kalkulator()
     return 0;
 }
 
-
-
 int main()
 {
-    kalkulator();
+    calculator();
     return 0;
-}   
+}
