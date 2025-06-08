@@ -2,31 +2,6 @@
 #include <cctype>
 #include <cstdlib>
 
-// Function to test if a character is a digit
-void intTest()
-{
-    while (true)
-    {
-        char ch{};
-        char cont{};
-        std::cout << "Enter a character: ";
-        std::cin >> ch;
-        bool isDigit = std::isdigit(ch);
-        std::cout << "Is '" << ch << "' a digit? " << (isDigit ? "Yes" : "No") << std::endl;
-        std::cout << "Continue?: ";
-        std::cin >> ch;
-
-        if (ch == 't')
-        {
-            continue;
-        }
-        else
-        {
-            break;
-        }
-    }
-}
-
 // Calculator function
 int calculator()
 {
